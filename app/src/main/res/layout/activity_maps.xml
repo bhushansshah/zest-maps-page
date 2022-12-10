@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        tools:context=".MapsActivity" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/grd2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ground2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/grd1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ground1"
+            app:layout_constraintEnd_toStartOf="@+id/grd2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/grd3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ground3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/grd2"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/Flfrag"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            app:layout_constraintTop_toBottomOf="@+id/grd2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
+
+
+
+
+
