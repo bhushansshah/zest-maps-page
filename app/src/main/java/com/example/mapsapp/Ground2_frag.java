@@ -2,11 +2,19 @@ package com.example.mapsapp;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,7 +22,7 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class Ground2_frag extends Fragment {
-
+    private ImageSlider imageSlider;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -60,5 +68,16 @@ public class Ground2_frag extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_ground2_frag, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        imageSlider = (ImageSlider) view.findViewById(R.id.imageSlider2);
+        ArrayList<SlideModel> slideModels = new ArrayList<>();
+        slideModels.add(new SlideModel("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2H8V6NG7u6fLx9ghE_W2VP4_nhyT2WvNIeA&usqp=CAU", "Hostel Ground", ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://c4.wallpaperflare.com/wallpaper/328/317/120/wallhaven-462060-wallpaper-preview.jpg", "Hostel Ground", ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC7TU2YdKON_2SSfbmtvoz9MS2o5uXmWGBNskeX_G3YsyEFZIX-yV1r9cxS3be1Lx4s-E&usqp=CAU", "Hostel Ground", ScaleTypes.FIT));
+        imageSlider.setImageList(slideModels, ScaleTypes.FIT);
     }
 }

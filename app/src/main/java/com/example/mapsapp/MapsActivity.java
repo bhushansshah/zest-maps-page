@@ -46,13 +46,23 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        LatLng coep = new LatLng(18.528161758804586, 73.85266788568693);
-        MarkerOptions option = new MarkerOptions().position(coep).title("COEP Ground");
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(option);
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(coep));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(coep, 16f));
+        LatLng coepGrd = new LatLng(18.528161758804586, 73.85266788568693);
+        LatLng hostelGrd = new LatLng(18.52869724082493, 73.8512789054897);
+        LatLng boatCLubGrd = new LatLng(18.53095384716651, 73.85630031454541);
+        LatLng sppuGrd = new LatLng(18.558624856421375, 73.8225352766761);
+        LatLng mainBuilding = new LatLng(18.52942970918503, 73.85651988785894);
+        MarkerOptions optionCoepGrd = new MarkerOptions().position(coepGrd).title("COEP Ground");
+        MarkerOptions optionHostelGrd = new MarkerOptions().position(hostelGrd).title("HostelGround");
+        MarkerOptions optionBoatClubGrd = new MarkerOptions().position(boatCLubGrd).title("Boat Club");
+        MarkerOptions optionSppuGrd = new MarkerOptions().position(sppuGrd).title("SPPU Ground");
+        MarkerOptions optionMainBuilding = new MarkerOptions().position(mainBuilding).title("Main Building");
+        mMap.addMarker(optionCoepGrd);
+        mMap.addMarker(optionHostelGrd);
+        mMap.addMarker(optionBoatClubGrd);
+        mMap.addMarker(optionSppuGrd);
+        mMap.addMarker(optionMainBuilding);
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(coepGrd));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(coepGrd, 12f));
         Button ground1Btn = findViewById(R.id.grd1);
         Button ground2Btn = findViewById(R.id.grd2);
         Button ground3Btn = findViewById(R.id.grd3);

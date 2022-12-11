@@ -2,6 +2,8 @@ package com.example.mapsapp;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,6 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
+
 import java.util.ArrayList;
 
 /**
@@ -19,7 +25,7 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class Ground1_frag extends Fragment {
-
+    private ImageSlider imageSlider;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -53,19 +59,33 @@ public class Ground1_frag extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
+
     }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ground1_frag, container, false);
+
+        return inflater.inflate(R.layout.frag_ground1, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        imageSlider = (ImageSlider) view.findViewById(R.id.imageSlider1);
+        ArrayList<SlideModel> slideModels = new ArrayList<>();
+        slideModels.add(new SlideModel("https://www.fodors.com/wp-content/uploads/2019/03/HERO_SEAsia_Natural_Wonders_shutterstock_440952967.jpg", "Boat Club Stadium", ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/07/29/11/ha-long-bay-0.jpg?quality=75&width=982&height=726&auto=webp", "Boat Club Stadium", ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://images.unsplash.com/photo-1500622944204-b135684e99fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bmF0dXJhbHxlbnwwfHwwfHw%3D&w=1000&q=80", "Boat Club Stadium", ScaleTypes.FIT));
+        imageSlider.setImageList(slideModels, ScaleTypes.FIT);
     }
 }
