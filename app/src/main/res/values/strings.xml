@@ -1,9 +1,11 @@
 <resources>
     <string name="app_name">MapsApp</string>
     <string name="title_activity_maps">MapsActivity</string>
-    <string name="ground1">Ground 1</string>
-    <string name="ground2">Ground 2</string>
-    <string name="ground3">Ground 3</string>
+    <string name="ground1">Boat Club Stadium</string>
+    <string name="ground2">Hostel Ground</string>
+    <string name="ground3">Main Building</string>
+    <string name="ground4">College Ground</string>
+    <string name="ground5">SPPU Ground</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -61,28 +61,53 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.addMarker(optionBoatClubGrd);
         mMap.addMarker(optionSppuGrd);
         mMap.addMarker(optionMainBuilding);
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(coepGrd));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(coepGrd, 12f));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(boatCLubGrd));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(boatCLubGrd, 12f));
         Button ground1Btn = findViewById(R.id.grd1);
         Button ground2Btn = findViewById(R.id.grd2);
         Button ground3Btn = findViewById(R.id.grd3);
+        Button ground4Btn = findViewById(R.id.grd4);
+        Button ground5Btn = findViewById(R.id.grd5);
         getSupportFragmentManager().beginTransaction().replace(R.id.Flfrag, Ground1_frag.class, null).setReorderingAllowed(true).addToBackStack("name").commit();
         ground1Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getSupportFragmentManager().beginTransaction().replace(R.id.Flfrag, Ground1_frag.class, null).setReorderingAllowed(true).addToBackStack("name").commit();
+                LatLng boatCLubGrd = new LatLng(18.53095384716651, 73.85630031454541);
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(boatCLubGrd, 17f));
             }
         });
         ground2Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getSupportFragmentManager().beginTransaction().replace(R.id.Flfrag, Ground2_frag.class, null).setReorderingAllowed(true).addToBackStack("name").commit();
+                LatLng hostelGrd = new LatLng(18.52869724082493, 73.8512789054897);
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(hostelGrd, 17f));
+
             }
         });
         ground3Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getSupportFragmentManager().beginTransaction().replace(R.id.Flfrag, Ground3_frag.class, null).setReorderingAllowed(true).addToBackStack("name").commit();
+                LatLng mainBuilding = new LatLng(18.52942970918503, 73.85651988785894);
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(mainBuilding, 17f));
+            }
+        });
+        ground4Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.Flfrag, Ground4_frag.class, null).setReorderingAllowed(true).addToBackStack("name").commit();
+                LatLng coepGrd = new LatLng(18.528161758804586, 73.85266788568693);
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(coepGrd, 17f));
+            }
+        });
+        ground5Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.Flfrag, Ground4_frag.class, null).setReorderingAllowed(true).addToBackStack("name").commit();
+                LatLng sppuGrd = new LatLng(18.558624856421375, 73.8225352766761);
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sppuGrd, 17f));
             }
         });
     }

@@ -1,0 +1,25 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Ground4_frag"
+    android:layout_marginEnd="5dp">
+
+    <!-- TODO: Update blank fragment layout -->
+    <com.denzcoskun.imageslider.ImageSlider
+        android:id="@+id/imageSlider5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:iss_auto_cycle="false"
+        app:iss_period="3000"
+        app:iss_delay="1000"
+        app:iss_placeholder="@color/cardview_dark_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:iss_corner_radius="10"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="8dp"/>
+
+</FrameLayout>
