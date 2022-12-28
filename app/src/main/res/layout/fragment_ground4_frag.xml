@@ -12,7 +12,7 @@
         android:id="@+id/imageSlider4"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:iss_auto_cycle="false"
+        app:iss_auto_cycle="true"
         app:iss_period="3000"
         app:iss_delay="1000"
         app:iss_placeholder="@color/cardview_dark_background"
